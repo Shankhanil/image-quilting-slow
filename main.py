@@ -9,12 +9,12 @@ CURRENT_FOLDER = Path(__file__).parent
 if __name__ == '__main__':
     
     # Reading image file
-    img = cv.imread('input_files/t7.png')
+    img = cv.imread('patch_back_0_192_0.png')
 
     # define the constants
-    block_size = 50
+    block_size = 25
     overlap_size = block_size//6
-    num_blocks = 10
+    num_blocks = 50
     tolerance_factor = 0.1
 
     # convert image to double
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     proper_h1 = proper_w1 = (block_size-overlap_size)*num_blocks - (overlap_size*(num_blocks-1))
     plt.imshow(output_img[0:proper_h1, 0:proper_w1, :])
     plt.axis('off')
-    plt.savefig('output_files/t7', bbox_inches='tight', pad_inches=0)
+    plt.savefig('output_files/checks', bbox_inches='tight', pad_inches=0)
     plt.show()
     plt.close()
 
